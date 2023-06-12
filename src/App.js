@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import MainProducts from './components/MainProducts';
-import { useQuery, useMutation, useQueryClient, QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { useMutation, useQueryClient, QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 
 // Create a client
