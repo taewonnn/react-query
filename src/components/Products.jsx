@@ -9,8 +9,11 @@ export default function Products() {
 
   // use-query
   const { isLoading, error, data: products } = useQuery(['products', checked], async () => {
-    console.log('fetching...');
+    console.log('fetching...', checked);
     return fetch(`data/${checked ? 'sale_' : ''}products.json`).then((res) => res.json())
+  }, {
+    // 캐시를 길게
+    staleTime: 1000 * 60 * 5,
   });
 
   const handleChange = () => setChecked((prev) => !prev);
@@ -38,3 +41,4 @@ export default function Products() {
     </>
   );
 }
+
